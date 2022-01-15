@@ -11,4 +11,4 @@ COPY . /home/app
 RUN pip install -r requirements.txt
 RUN python ./home/app/simpleChatBot/init.py
 
-CMD["python","./simpleChatBot/main.py"]
+CMD["python","/home/app/pyChatBot/simpleChatBot/main.py"]
