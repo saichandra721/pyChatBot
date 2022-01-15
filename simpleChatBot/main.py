@@ -95,7 +95,7 @@ def chat():
             print("Exiting chat bot")
             break
         results = model.predict([bag_of_words(inp, words)])
-        if max(list(results[0,:]))<0.8:
+        if max(list(results[0,:]))<0.6:
             print("I don't understand. Can you be clear?")
             continue
         results_index = numpy.argmax(results)
