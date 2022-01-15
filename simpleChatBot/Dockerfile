@@ -8,7 +8,7 @@ RUN mkdir -p /home/app
 
 COPY . /home/app
 
-RUN pip install -r requirements.txt
-RUN python ./home/app/simpleChatBot/init.py
+RUN pip install -r /home/app/requirements.txt
+RUN python ./home/app/init.py
 
-CMD["python","/home/app/pyChatBot/simpleChatBot/main.py"]
+CMD["python","/home/app/main.py"]
