@@ -6,9 +6,9 @@ ENV CHATBOT_USERNAME=admin\
 
 RUN mkdir -p /home/app
 
-COPY . /home/app
+COPY ./app /home/app
 
 RUN pip install -r /home/app/requirements.txt
 RUN python ./home/app/init.py
 
-CMD["python","/home/app/main.py"]
+CMD ["python","/home/app/main.py"]
