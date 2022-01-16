@@ -10,11 +10,11 @@ import random
 import json
 import pickle
 
-with open("app/intents.json") as file:
+with open("/home/app/intents.json") as file:
     data = json.load(file)
 
 try:
-    with open("app/data.pickle", "rb") as f:
+    with open("/home/app/data.pickle", "rb") as f:
         words, labels, training, output = pickle.load(f)
 except:
     words = []
@@ -55,7 +55,7 @@ except:
 
     training = numpy.array(training)
     output = numpy.array(output)
-    with open("app/data.pickle", "wb") as f:
+    with open("/home/app/data.pickle", "wb") as f:
         pickle.dump((words, labels, training, output), f)
 tensorflow.compat.v1.reset_default_graph()
 
@@ -72,7 +72,7 @@ model = tflearn.DNN(net)
 # except:
 if True:
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-    model.save("app/model.tflearn")
+    model.save("/home/app/model.tflearn")
 
 
 def bag_of_words(s, words):
